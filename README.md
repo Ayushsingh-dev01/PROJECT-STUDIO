@@ -20,6 +20,25 @@ The **Student Attendance Management System** is an integrated mini-project desig
 - **Search & Filter:** Filter records by eligibility status or search by student name/roll number.
 - **LocalStorage Persistence:** Saves data locally in the browser across page reloads.
 
+- ## Folder Structure
+```text
+CSD0111_Mini_Project/
+├── 01_Word_Documentation/
+│   ├── Project_Report.docx
+│   └── Project_Report.pdf
+├── 02_Excel_Workbook/
+│   └── Project_Data.xlsx
+├── 03_PowerPoint/
+│   └── Project_Presentation.pptx
+├── 04_Website/
+│   ├── index.html
+│   ├── style.css
+│   └── script.js
+├── 05_Screenshots/
+│   └── Project_Screenshots/
+└── README.md
+```
+
 ## How to Run the Website
 1. Navigate to the `04_Website/` folder.
 2. Double-click `index.html` to open it in any modern web browser (Chrome, Edge, Firefox).
