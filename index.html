@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Attendance Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Student Attendance Management System</h1>
+        <p>CSD0111 – Project Studio-I | Track & Calculate Student Attendance</p>
+    </header>
+
+    <main class="container">
+        <!-- Summary Dashboard -->
+        <section class="summary-cards">
+            <div class="card">
+                <h3>Total Students</h3>
+                <p id="totalStudents">0</p>
+            </div>
+            <div class="card">
+                <h3>Eligible (≥75%)</h3>
+                <p id="eligibleCount" class="green-text">0</p>
+            </div>
+            <div class="card">
+                <h3>Defaulters (&lt;75%)</h3>
+                <p id="defaulterCount" class="red-text">0</p>
+            </div>
+        </section>
+
+        <!-- Form to Add Attendance Record -->
+        <section class="form-section">
+            <h2>Add Student Attendance</h2>
+            <form id="attendanceForm">
+                <div class="form-group">
+                    <label for="rollNo">Roll Number *</label>
+                    <input type="text" id="rollNo" placeholder="e.g., CS101" required>
+                </div>
+                <div class="form-group">
+                    <label for="studentName">Student Name *</label>
+                    <input type="text" id="studentName" placeholder="e.g., Rahul Sharma" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject *</label>
+                    <select id="subject" required>
+                        <option value="">-- Select Subject --</option>
+                        <option value="Web Technologies">Web Technologies</option>
+                        <option value="Data Structures">Data Structures</option>
+                        <option value="Database Systems">Database Systems</option>
+                        <option value="Operating Systems">Operating Systems</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="totalClasses">Total Classes Held *</label>
+                    <input type="number" id="totalClasses" min="1" placeholder="e.g., 40" required>
+                </div>
+                <div class="form-group">
+                    <label for="attendedClasses">Classes Attended *</label>
+                    <input type="number" id="attendedClasses" min="0" placeholder="e.g., 34" required>
+                </div>
+                <button type="submit" class="btn-primary">Add Record</button>
+            </form>
+            <p id="errorMsg" class="error-msg"></p>
+        </section>
+
+        <!-- Search & Filter Section -->
+        <section class="table-section">
+            <div class="table-header">
+                <h2>Attendance Records</h2>
+                <div class="controls">
+                    <input type="text" id="searchInput" placeholder="Search by Name or Roll No...">
+                    <select id="statusFilter">
+                        <option value="all">All Students</option>
+                        <option value="eligible">Eligible (≥75%)</option>
+                        <option value="shortage">Shortage (&lt;75%)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="table-responsive">
+                <table id="attendanceTable">
+                    <thead>
+                        <tr>
+                            <th>Roll No</th>
+                            <th>Student Name</th>
+                            <th>Subject</th>
+                            <th>Attended / Total</th>
+                            <th>Percentage</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                        <!-- Dynamic Rows via JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Developed for CSD0111 Mini Project | Academic Session July–Dec 2026</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
